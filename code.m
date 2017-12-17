@@ -1,17 +1,17 @@
 clc
 RGBo = imread('LeafDe.jpg');
 RGB = imresize(RGBo ,.95);
-figure,imshow(RGB);title('Orignal')
+subplot(2,2,1);imshow(RGB);title('Orignal')
 I = rgb2gray(RGB);
-figure,imshow(I);title('Grayscale')
+subplot(2,2,2);imshow(I);title('Grayscale')
 
 
 
 equi = histeq(I);
-imshow(equi);title('Histogram Equal')
+subplot(2,2,3);imshow(equi);title('Histogram Equal')
 
-figure ,imhist(I);title('Histogram')
-figure,imshow(RGB);title('normal image')
+subplot(2,2,4);imhist(I);title('Histogram')
+figure,subplot(2,2,1);imshow(RGB);title('normal image')
 
 
 %texture analyzation
@@ -50,7 +50,6 @@ HSI(:,:,2)=S;
 HSI(:,:,3)=I1;
 
 
-figure,imshow(H);title('H-Component')
-figure,imshow(S);title('S-Component')
-figure,imshow(I1);title('I1 Component')
-figure,imshow(HSI);title('HSI Image');
+subplot(2,2,2);imshow(H);title('H-Component')
+subplot(2,2,3);imshow(S);title('S-Component')
+subplot(2,2,4);imshow(I1);title('I-Component')
